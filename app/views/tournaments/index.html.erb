@@ -1,3 +1,5 @@
-<% @tournaments.each do |tournament| %>
-  <li><%= link_to tournament.name, tournament_path(tournament) %></li>
-<% end %>
+<div>
+  <% @tournaments.each do |tournament| %>
+    <li><%= link_to tournament.name, tournament_path(tournament) %></li>
+  <% end %>
+</div>

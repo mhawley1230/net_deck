@@ -1,6 +1,6 @@
 class TournamentsController < ApplicationController
   def index
-    @tournaments = Tournament.all
+    @tournaments = Tournament.all.order(created_at: :desc)
   end
 
   def show

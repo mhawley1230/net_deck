@@ -3,26 +3,26 @@
 </div>Archetype: <%= @deck.archetype %></div>
 <br><br>
 
-<div>
+<div class="deck-contents">
 Main:
-<% @cards.each do |card| %>
-  <% if card.main? %>
-    <li>
-      <%= card.number_played %>
-      <a href="<%=card.img_url%>"><%= card.name %></a>
-    </li>
+  <% @cards.each do |card| %>
+    <% if card.main? %>
+      <li>
+        <%= card.number_played %>
+        <a href="<%=card.img_url%>"><%= card.name %></a>
+      </li>
+    <% end %>
   <% end %>
-<% end %>
-</div>
+  </div>
 
-<div>
-Sideboard:
-<%= @cards.each do |card| %>
-  <% if !card.main? %>
-    <li>
-      <%= card.number_played %>
-      <a href="<%=card.img_url%>"><%= card.name %></a>
-    </li>
+  <div>
+  Sideboard:
+  <%= @cards.each do |card| %>
+    <% if !card.main? %>
+      <li>
+        <%= card.number_played %>
+        <a href="<%=card.img_url%>"><%= card.name %></a>
+      </li>
+    <% end %>
   <% end %>
-<% end %>
 </div>
