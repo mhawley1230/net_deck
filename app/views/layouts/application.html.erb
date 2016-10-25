@@ -10,10 +10,18 @@
 
   <body>
     <h1>NetDeck</h1>
-    <%= form_tag(tournaments_path, method: "get", id: "search") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search Card or Color" %>
-      <%= submit_tag "Search", name: nil %>
+
+    <% flash.each do |key, value| %>
+    <div class="flash">
+      <%= value %>
+    </div>
     <% end %>
+
+    <%= form_tag(search_index_path, method: "get", id: "search") do %>
+      <%= text_field_tag :search_index, params[:search], placeholder: "Search Decks" %>
+      <%= submit_tag "Search", name: nil, id: "search-button" %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
