@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
   root 'tournaments#index'
+
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
 
   resources :tournaments, only: [:index, :show] do
     resources :decks, only: [:index, :show]

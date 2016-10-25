@@ -10,7 +10,7 @@ $(document).ready(function(){
       success: deckList = function(data){
         var str = '';
         str += '<li>Player: ' + data.player + '</li>';
-        str += '<li>'
+        str += '<li>' + data.archetype + '</li>';
         for(var i in data.cards) {
           card = data.cards[i];
           str += '<li>' + card.number_played + ' ' + card.name + '</li>';
