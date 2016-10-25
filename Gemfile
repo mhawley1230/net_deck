@@ -12,6 +12,7 @@ gem 'mtg_sdk'
 gem 'rubocop', require: false
 gem 'selenium-webdriver'
 gem 'pg_search'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platform: :mri
