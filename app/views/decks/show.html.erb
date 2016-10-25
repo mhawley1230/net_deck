@@ -1,0 +1,28 @@
+<%= @deck.name %>
+<div>Player: <%= @deck.player %></div>
+</div>Archetype: <%= @deck.archetype %></div>
+<br><br>
+
+<div>
+Main:
+<% @cards.each do |card| %>
+  <% if card.main? %>
+    <li>
+      <%= card.number_played %>
+      <a href="<%=card.img_url%>"><%= card.name %></a>
+    </li>
+  <% end %>
+<% end %>
+</div>
+
+<div>
+Sideboard:
+<%= @cards.each do |card| %>
+  <% if !card.main? %>
+    <li>
+      <%= card.number_played %>
+      <a href="<%=card.img_url%>"><%= card.name %></a>
+    </li>
+  <% end %>
+<% end %>
+</div>
