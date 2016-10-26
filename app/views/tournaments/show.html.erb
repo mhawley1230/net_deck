@@ -1,0 +1,14 @@
+<h1><%= @tournament.name %></h1>
+<h2><%= @tournament.location %></h2>
+<h2><%= @tournament.date %></h2>
+<% @decks.each do |deck| %>
+  Placing: <%= deck.placing %>
+  <div class="deck">
+    <%= link_to deck.name, deck_path(deck) %>
+  </div>
+  <br>
+<% end %>
+
+<div id="deck-content">
+
+</div>
