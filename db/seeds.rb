@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'mtg_sdk'
+binding.pry
 
 Tournament.create!( name: 'Pro Tour Kaladesh', location: 'Honolulu, HI',
  date: '10/14/16', format: 'Standard' )
