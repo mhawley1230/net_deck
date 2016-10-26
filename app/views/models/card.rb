@@ -3,5 +3,5 @@ class Card < ActiveRecord::Base
 
   belongs_to :deck
 
-  multisearchable :against => [:name, :colors]
+  multisearchable against: :name
 end
