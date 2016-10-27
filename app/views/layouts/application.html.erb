@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <h1>NetDeck</h1>
+    <h1><a href='/'>NetDeck</a></h1>
 
     <% flash.each do |key, value| %>
     <div class="flash">
@@ -18,7 +18,7 @@
     <% end %>
 
     <%= form_tag(decks_path, method: "get", id: "search") do %>
-      <%= text_field_tag :query, params[:search], placeholder: "Search" %>
+      <%= text_field_tag :query, params[:search], placeholder: "Search Decks" %>
       <%= submit_tag "Search", name: nil, id: "search-button" %>
     <% end %>
 

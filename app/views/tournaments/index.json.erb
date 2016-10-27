@@ -1,0 +1,7 @@
+<% @tournaments.each do |tournament| %>
+    {
+      name: <%= tournament.name %>,
+      date: <%= tournament.date %>,
+      format: <%= tournament.format %>
+    }
+<% end %>

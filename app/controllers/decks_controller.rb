@@ -11,13 +11,17 @@ class DecksController < ApplicationController
     @cards = @deck.cards
     respond_to do |format|
       format.html
-      format.json { render json: {
-        name: @deck.name,
-        player: @deck.player,
-        archetype: @deck.archetype,
-        main: @cards.where(main?: true),
-        side: @cards.where(main?: false)
-      } }
+      format.json {
+        render json: {
+          deck: {
+            name: @deck.name,
+            player: @deck.player,
+            archetype: @deck.archetype,
+            main: @cards.where(main?: true),
+            side: @cards.where(main?: false)
+          } 
+        }
+      }
     end
   end
 end

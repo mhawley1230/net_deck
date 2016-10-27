@@ -6,13 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'mtg_sdk'
-binding.pry
+
+Tournament.create!( name: 'SCG Milwaukee', location: 'Milwaukee, MI',
+  date: '10/23/16', format: 'Standard' )
+
+Tournament.create!( name: 'GP Providence', location: 'Providence, RI',
+ date: '10/22/16', format: 'Standard' )
 
 Tournament.create!( name: 'Pro Tour Kaladesh', location: 'Honolulu, HI',
  date: '10/14/16', format: 'Standard' )
 
+Tournament.create!( name: 'New York Stax Exchange', location: 'New York, NY',
+  date: '10/14/16', format: 'Vintage' )
+
 Deck.create!( name: 'Grixis Control', colors: 'blue, black, red', placing: 1,
-  archetype: 'control', player: 'Shota Yasooka', tournament_id: 1)
+  archetype: 'control', player: 'Shota Yasooka', tournament_id: 3)
 
 # Mainboard
 Card.create!( name: 'Evolving Wilds', colors: 'colorless', number_played: 4,
@@ -83,8 +91,8 @@ Card.create!( name: 'Transgress the Mind', colors: 'black', number_played: 1,
 Card.create!( name: 'Weaver of Lightning', colors: 'red', number_played: 3,
   img_url: MTG::Card.find(414450).image_url, deck_id: 1, main?: false )
 
-Deck.create!( name: 'Grixis Control 2', colors: 'blue, black, red', placing: 2,
-  archetype: 'control', player: 'Shota Yasooka', tournament_id: 1)
+Deck.create!( name: 'Jeskai Control', colors: 'blue, white, red', placing: 2,
+  archetype: 'control', player: 'Carlos Romao', tournament_id: 3)
 
 # Mainboard
 Card.create!( name: 'Evolving Wilds', colors: 'colorless', number_played: 4,
@@ -156,7 +164,7 @@ Card.create!( name: 'Weaver of Lightning', colors: 'red', number_played: 3,
   img_url: MTG::Card.find(414450).image_url, deck_id: 2, main?: false )
 
 Deck.create!( name: 'Grixis Control 3', colors: 'blue, black, red', placing: 3,
-  archetype: 'control', player: 'Shota Yasooka', tournament_id: 1)
+  archetype: 'control', player: 'Shota Yasooka', tournament_id: 3)
 
 # Mainboard
 Card.create!( name: 'Evolving Wilds', colors: 'colorless', number_played: 4,

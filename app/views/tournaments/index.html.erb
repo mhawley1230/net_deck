@@ -1,5 +1,13 @@
-<div class='container'>
+<button type="button" class='standard-button'>Standard</button>
+<button type="button" class='modern-button'>Modern</button>
+<button type="button" class="legacy-button">Legacy</button>
+<button type="button" class="vintage-button">Vintage</button>
+
+
+<div class='tournaments'>
   <% @tournaments.each do |tournament| %>
-    <li><%= link_to tournament.name, tournament_path(tournament) %></li>
+    <% if tournament.format == 'Standard' %>
+      <li><%= link_to tournament.name, tournament_path(tournament) %></li>
+    <% end %>
   <% end %>
 </div>
