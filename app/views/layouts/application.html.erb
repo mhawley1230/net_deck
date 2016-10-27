@@ -2,18 +2,26 @@
 <html>
   <head>
     <title>NetDeck</title>
-    <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css" rel="stylesheet">
   </head>
 
   <body>
-    <h1>NetDeck</h1>
-    <%= form_tag(tournaments_path, method: "get", id: "search") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search Card or Color" %>
-      <%= submit_tag "Search", name: nil %>
+    <h1><a href='/'>NetDeck</a></h1>
+
+    <% flash.each do |key, value| %>
+    <div class="flash">
+      <%= value %>
+    </div>
     <% end %>
+
+    <%= form_tag(decks_path, method: "get", id: "search") do %>
+      <%= text_field_tag :query, params[:search], placeholder: "Search Decks" %>
+      <%= submit_tag "Search", name: nil, id: "search-button" %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
