@@ -8,21 +8,19 @@ $(document).ready(function(){
       type: 'GET',
       url: event.target.href + '.json',
       success: deckList = function(data){
-        debugger;
+
         var str = '';
         str += '<li>' + data.deck.name + '</li>';
         str += '<li>Player: ' + data.deck.player + '</li>';
         str += '<li>Archetype: ' + data.deck.archetype + '</li>';
         str += 'Main Deck';
         for(var i in data.deck.main) {
-          debugger;
           card = data.deck.main[i];
           str += '<li>' + card.number_played + ' ' + card.name + '</li>';
         }
         str += '\n';
         str += 'Sideboard';
         for(var i in data.deck.side) {
-          debugger;
           card = data.deck.main[i];
           str += '<li>' + card.number_played + ' ' + card.name + '</li>';
         }

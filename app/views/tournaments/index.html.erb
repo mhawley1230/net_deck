@@ -4,10 +4,10 @@
 <button type="button" class="vintage-button">Vintage</button>
 
 
-<div class='tournaments'>
+<div id='tournaments'>
   <% @tournaments.each do |tournament| %>
     <% if tournament.format == 'Standard' %>
-      <li><%= link_to tournament.name, tournament_path(tournament) %></li>
+      <li><%= link_to ("#{tournament.name} - #{tournament.date}"), tournament_path(tournament) %></li>
     <% end %>
   <% end %>
 </div>

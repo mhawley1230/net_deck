@@ -1,7 +1,13 @@
-<% @tournaments.each do |tournament| %>
-    {
-      name: <%= tournament.name %>,
-      date: <%= tournament.date %>,
-      format: <%= tournament.format %>
-    }
+[
+<% @tournaments.each_with_index do |tournament, index| %>
+  {
+    <%= "id".to_json.html_safe %>: <%= tournament.id.to_json.html_safe %>,
+    <%= "name".to_json.html_safe %>: <%= tournament.name.to_json.html_safe %>,
+    <%= "date".to_json.html_safe %>: <%= tournament.date.to_json.html_safe %>,
+    <%= "format".to_json.html_safe %>: <%= tournament.format.to_json.html_safe %>
+  }
+  <% unless index== @tournaments.count - 1%>
+  ,
 <% end %>
+<% end %>
+]

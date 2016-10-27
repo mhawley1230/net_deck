@@ -3,23 +3,28 @@ $(document).ready(function(){
 
     event.preventDefault();
 
-    var $standard = $('.tournaments')
-    $.ajax({
+    var $vintage = $('#tournaments');
+
+    var request = $.ajax({
       type: 'GET',
       url: '/tournaments.json',
-      success: format = function(data){
-        var str = '';
-        debugger;
-        if (data.format === 'Vintage') {
-          debugger;
-          for (var [i] in data) {
-            debugger;
-            str += data.name + '-' + data.date;
-            debugger;
-          }
+      content_type: 'application/json'
+    });
+
+    request.done(function(data) {
+      var str = '';
+      for (var i in data) {
+        if (data[i].format === 'Vintage') {
+          str += '<li>';
+          str += "<a href='/tournaments/";
+          str += data[i].id;
+          str += "'>"
+          str += data[i].name + ' - ' + data[i].date;
+          str += '</a>'
+          str += '</li>';
         }
-        $standard.html(str);
       }
+      $vintage.html(str);
     });
   });
 });

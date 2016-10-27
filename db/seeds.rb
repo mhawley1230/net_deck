@@ -9,12 +9,27 @@ require 'mtg_sdk'
 
 Tournament.create!( name: 'SCG Milwaukee', location: 'Milwaukee, MI',
   date: '10/23/16', format: 'Standard' )
-
 Tournament.create!( name: 'GP Providence', location: 'Providence, RI',
  date: '10/22/16', format: 'Standard' )
-
 Tournament.create!( name: 'Pro Tour Kaladesh', location: 'Honolulu, HI',
  date: '10/14/16', format: 'Standard' )
+
+Tournament.create!( name: 'New York Stax Exchange', location: 'New York, NY',
+  date: '10/14/16', format: 'Vintage' )
+
+Tournament.create!( name: 'Modern Tournament 1', location: 'Milwaukee, MI',
+  date: '10/23/16', format: 'Modern' )
+Tournament.create!( name: 'Modern Tournament 2', location: 'Providence, RI',
+ date: '10/22/16', format: 'Modern' )
+Tournament.create!( name: 'Modern Tournament 3', location: 'Honolulu, HI',
+ date: '10/14/16', format: 'Modern' )
+
+Tournament.create!( name: 'Legacy Tournament 1', location: 'Milwaukee, MI',
+ date: '10/23/16', format: 'Legacy' )
+Tournament.create!( name: 'Legacy Tournament 2', location: 'Providence, RI',
+date: '10/22/16', format: 'Legacy' )
+Tournament.create!( name: 'Legacy Tournament 3', location: 'Honolulu, HI',
+date: '10/14/16', format: 'Legacy' )
 
 Tournament.create!( name: 'New York Stax Exchange', location: 'New York, NY',
   date: '10/14/16', format: 'Vintage' )

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('.standard-button').click(function (event){
+  $('.legacy-button').click(function (event){
 
     event.preventDefault();
 
@@ -14,7 +14,7 @@ $(document).ready(function(){
     request.done(function(data) {
       var str = '';
       for (var i in data) {
-        if (data[i].format === 'Standard') {
+        if (data[i].format === 'Legacy') {
           str += '<li>';
           str += "<a href='/tournaments/";
           str += data[i].id;
