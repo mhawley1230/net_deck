@@ -9,11 +9,7 @@
   </head>
 
   <body>
-    <%= form_tag(decks_path, method: "get", id: "search") do %>
-      <%= text_field_tag :query, params[:search], placeholder: "Search Decks" %>
-      <%= submit_tag "Search", name: nil, id: "search-button" %>
-    <% end %>
-
+    <h1>NetDeck</h1>
     <nav id = "top-bar" data-topbar role="navigation">
       <%= form_tag(decks_path, method: "get", id: "search") do %>
         <%= text_field_tag :query, params[:search], placeholder: "Search Decks" %>
@@ -30,11 +26,6 @@
             <li><%= link_to "Sign Up", new_user_registration_path %></li>
             <li><%= link_to "Log In", new_user_session_path %></li>
           <% end %>
-          <li class = "form-inline">
-            <%= form_tag(recipes_path, method: "get", id: "search") do %>
-              <li id="right"><%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %></li>
-              <%= submit_tag "Search", name: nil %>
-            <% end %>
           </li>
           <% if current_user.try(:admin?) %>
             <li><%= link_to "View All Users", users_path %></li>
