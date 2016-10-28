@@ -2,10 +2,10 @@
 <html>
   <head>
     <title>NetDeck</title>
-    <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css" rel="stylesheet">
   </head>
 
   <body>
@@ -13,7 +13,14 @@
     <%= form_tag(tournaments_path, method: "get", id: "search") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search Card or Color" %>
       <%= submit_tag "Search", name: nil %>
+
     <% end %>
+
+    <%= form_tag(decks_path, method: "get", id: "search") do %>
+      <%= text_field_tag :query, params[:search], placeholder: "Search Decks" %>
+      <%= submit_tag "Search", name: nil, id: "search-button" %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

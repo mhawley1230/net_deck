@@ -17,6 +17,7 @@ gem 'devise'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'
+  gem 'sqlite3'
 end
 
 group :test do
