@@ -31,9 +31,6 @@ date: '10/22/16', format: 'Legacy' )
 Tournament.create!( name: 'Legacy Tournament 3', location: 'Honolulu, HI',
 date: '10/14/16', format: 'Legacy' )
 
-Tournament.create!( name: 'New York Stax Exchange', location: 'New York, NY',
-  date: '10/14/16', format: 'Vintage' )
-
 Deck.create!( name: 'Grixis Control', colors: 'blue, black, red', placing: 1,
   archetype: 'control', player: 'Shota Yasooka', tournament_id: 3)
 
