@@ -1,10 +1,13 @@
-<button type="button" class='standard-button'>Standard</button>
-<button type="button" class='modern-button'>Modern</button>
-<button type="button" class="legacy-button">Legacy</button>
-<button type="button" class="vintage-button">Vintage</button>
+<div class="top-bar">
+  <button type="button" class='standard-button'>Standard</button>
+  <button type="button" class='modern-button'>Modern</button>
+  <button type="button" class="legacy-button">Legacy</button>
+  <button type="button" class="vintage-button">Vintage</button>
+</div>
 
 
 <div id='tournaments'>
+  Latest tournaments:
   <% @tournaments.each do |tournament| %>
     <% if tournament.format == 'Standard' %>
       <li><%= link_to ("#{tournament.name} - #{tournament.date}"), tournament_path(tournament) %></li>
