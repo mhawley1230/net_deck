@@ -1,8 +1,10 @@
-<div class='container'>
+<div>
   <div>
     <h1><%= @tournament.name %></h1>
     <h2><%= @tournament.location %></h2>
     <h2><%= @tournament.date %></h2>
+  </div>
+  <div class='container small-3 columns'>
     <% @decks.each do |deck| %>
       Placing: <%= deck.placing %>
       <div class="deck">
@@ -11,8 +13,6 @@
       <br>
     <% end %>
   </div>
-
-  <div id="deck-content">
-
-  </div>
+  <div id='deck-content' class="container small-3 columns"></div>
+  <div id='card-img' class='container small-3 columns'></div>
 </div>
