@@ -1,28 +1,25 @@
-// @import "*";
-@import "./colors";
-@import "./index";
+@import './show';
 
-#body {
-  background-color: #FFFFFF;
+li {
+  list-style-type: none;
+}
+
+.header {
+
+}
+
+.header > li {
+  margin: 0;
+  padding: 0;
 }
 
 .website-title {
-  :link {
-    font-family: arial;
-    color: $brown;
-    text-decoration: none;
-  }
-
-  :visited {
-    color: $brown;
-    text-decoration: none;
-  }
+  float: left;
 }
 
-#search {
-  display: flex;
-  margin: 0 auto;
-  justify-content: space-between;
+
+#search-bar {
+  width: 200px;
 }
 
 .footer {
