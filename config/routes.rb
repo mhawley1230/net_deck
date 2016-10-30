@@ -13,5 +13,11 @@ Rails.application.routes.draw do
     resources :cards, only: [:index, :show]
   end
 
+  resources :tournaments, only: [:index, :show] do
+    resources :comments, only: [:create, :destroy]
+  end
+
+  resources :cards, only: [:show]
+
   resources :search, only: [:index]
 end
