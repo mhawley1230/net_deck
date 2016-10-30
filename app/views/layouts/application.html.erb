@@ -18,7 +18,6 @@
     <% end %>
 
     <% if user_signed_in? %>
-    <% binding.pry %>
       <tr>Signed in as <%= current_user.email %>
       <tr><%= link_to "Log Off", destroy_user_session_path, method: :delete %></tr>
     <% else %>
