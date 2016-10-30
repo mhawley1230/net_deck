@@ -17,5 +17,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
 
+  resources :cards, only: [:show]
+
   resources :search, only: [:index]
 end

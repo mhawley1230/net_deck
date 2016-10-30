@@ -10,20 +10,25 @@
 
 <body>
   <table>
-    <tr><h3>NetDeck</h3></tr>
+    <tr class="menu-table">
+      <th><h3><a href='/'>NetDeck</a></h3></th>
 
-    <%= form_tag(decks_path, method: "get", id: "search") do %>
-    <tr><%= text_field_tag :query, params[:search], placeholder: "Search Decks", id: "search-bar" %></tr>
-    <tr><%= submit_tag "Search", name: nil, id: "search-button" %></tr>
-    <% end %>
+
+      <%= form_tag(decks_path, method: "get", id: "search") do %>
+      <th><%= text_field_tag :query, params[:search], placeholder: "Search Decks", id: "search-bar" %></th>
+      <th><%= submit_tag "Search", name: nil, id: "search-button" %></th>
+      <% end %>
+
+
 
     <% if user_signed_in? %>
-      <tr>Signed in as <%= current_user.email %>
-      <tr><%= link_to "Log Off", destroy_user_session_path, method: :delete %></tr>
+      <th>Signed in as <%= current_user.email %>
+      <th><%= link_to "Log Off", destroy_user_session_path, method: :delete %></th>
     <% else %>
-      <tr><%= link_to "Sign Up", new_user_registration_path %></tr>
-      <tr><%= link_to "Log In", new_user_session_path %></tr>
+      <th><%= link_to "Sign Up", new_user_registration_path %></th>
+      <th><%= link_to "Log In", new_user_session_path %></th>
     <% end %>
+  </th>
   </table>
 
   <div id="alert">

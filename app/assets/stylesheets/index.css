@@ -1,0 +1,13 @@
+#tournaments > li > a {
+  color: black;
+}
+
+.buttons {
+  margin: 0 auto;
+  border-bottom: solid 1px;
+}
+
+
+.buttons > button {
+
+}

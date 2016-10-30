@@ -8,7 +8,6 @@ $(document).ready(function(){
       type: 'GET',
       url: event.target.href + '.json',
       success: deckList = function(data){
-
         var str = '';
         str += '<li>' + data.deck.name + '</li>';
         str += '<li>Player: ' + data.deck.player + '</li>';
@@ -16,13 +15,17 @@ $(document).ready(function(){
         str += 'Main Deck';
         for(var i in data.deck.main) {
           card = data.deck.main[i];
-          str += '<li>' + card.number_played + ' ' + card.name + '</li>';
+          str += "<li id='card-link'>" + card.number_played + ' ';
+          str += "<a href='/cards/" + card.id + "'>";
+          str += card.name + '</a></li>';
         }
         str += '\n';
         str += 'Sideboard';
         for(var i in data.deck.side) {
-          card = data.deck.main[i];
-          str += '<li>' + card.number_played + ' ' + card.name + '</li>';
+          card = data.deck.side[i];
+          str += '<li>' + card.number_played + ' ';
+          str += "<a href='/cards/" + card.id + "'>";
+          str += card.name + '</a></li>';
         }
         $content.html(str);
       }
