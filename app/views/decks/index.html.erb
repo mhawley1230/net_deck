@@ -1,3 +1,3 @@
 <% @decks.each do |deck| %>
-  <li><a href="/decks/<%= deck.id %>"><%= deck.name %></a></li>
+  <li><a href="/tournaments/<%= deck.tournament.id %>"><%= deck.name %></a></li>
 <% end %>

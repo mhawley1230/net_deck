@@ -1,17 +1,43 @@
 <div>
-  <div>
-    <h1><%= @tournament.name %></h1>
-    <h2><%= @tournament.location %></h2>
-    <h2><%= @tournament.date %></h2>
-  </div>
-  <div class='container small-6 columns'>
-    <% @decks.each do |deck| %>
-      Placing: <%= deck.placing %>
-      <div class="deck">
-        <%= link_to deck.name, deck_path(deck) %>
-      </div>
-      <br>
-    <% end %>
-  </div>
-  <div id='deck-content'></div>
+  <section id='tournaments-section'>
+    <div>
+      <h1><%= @tournament.name %></h1>
+      <h2><%= @tournament.location %></h2>
+      <h2><%= @tournament.date %></h2>
+    </div>
+    <div class='container large-4 columns'>
+      <% @decks.each do |deck| %>
+        Placing: <%= deck.placing %>
+        <div class="deck">
+          <%= link_to deck.name, deck_path(deck) %>
+        </div>
+        <br>
+      <% end %>
+    </div>
+    <div id='deck-content' class="container large-4 columns"></div>
+    <div id='card-img' class='container large-4 columns'></div>
+  </section>
+
+  <section id='comments-section'>
+    <div id="comment-form">
+      <h2>Discussion</h2>
+      <%= form_for [@tournament, @comment] do |f| %>
+        <%= f.text_area :body %>
+        <%= f.submit "Submit" %>
+      <% end %>
+    </div>
+
+    <div id="comments-box">
+      <% if @comments.empty? %>
+        No one is discussing this. Be the first!
+      <% else %>
+        <% @comments.each do |comment| %>
+          <ul class="comment-container">
+            <li class="comment-creator"><%= comment.user.email %> says:</li>
+            <li class="comment-body"><%= comment.body %></li>
+          </ul>
+        <% end %>
+      <% end %>
+    </div>
+  </section>
 </div>

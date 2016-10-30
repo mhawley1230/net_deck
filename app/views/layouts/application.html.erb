@@ -1,4 +1,4 @@
-r<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>NetDeck</title>
@@ -9,34 +9,41 @@ r<!DOCTYPE html>
 </head>
 
 <body>
-  <div class="wrapper">
-    <div id="header">
-      <div class="website-title" style="none">
-        <h1><a href='/'>NetDeck</a></h1>
-      <div>
+  <table>
+    <tr class="menu-table">
+      <th><h3><a href='/'>NetDeck</a></h3></th>
 
-      <% flash.each do |key, value| %>
-      <div class="flash">
-        <%= value %>
-      </div>
-      <% end %>
-    </div>
 
-    <div id="search">
       <%= form_tag(decks_path, method: "get", id: "search") do %>
-      <%= text_field_tag :query, params[:search], placeholder: "Search Decks" %>
-      <%= submit_tag "Search", name: nil, id: "search-button" %>
+      <th><%= text_field_tag :query, params[:search], placeholder: "Search Decks", id: "search-bar" %></th>
+      <th><%= submit_tag "Search", name: nil, id: "search-button" %></th>
       <% end %>
-    </div>
 
-    <div id="body">
-      <%= yield %>
-    </div>
 
-    <div class="footer">
-      <div class="privacy">Privacy Policy</div>
-      <div class="agreement">The information presented on this site about Magic: The Gathering, both literal and graphical, is copyrighted by Wizards of the Coast. This website is not produced, endorsed, supported, or affiliated with Wizards of the Coast.</div>
+    <% if user_signed_in? %>
+      <th>Signed in as <%= current_user.email %></th>
+      <th><%= link_to "Log Off", destroy_user_session_path, method: :delete %></th>
+    <% else %>
+      <th><%= link_to "Sign Up", new_user_registration_path %></th>
+      <th><%= link_to "Log In", new_user_session_path %></th>
+    <% end %>
+  </table>
+
+  <div id="alert">
+    <% flash.each do |key, value| %>
+    <div class="flash">
+      <%= value %>
     </div>
+    <% end %>
+  </div>
+
+  <div id="body">
+    <%= yield %>
+  </div>
+
+  <div class="footer">
+    <div class="privacy">Privacy Policy</div>
+    <div class="agreement">The information presented on this site about Magic: The Gathering, both literal and graphical, is copyrighted by Wizards of the Coast. This website is not produced, endorsed, supported, or affiliated with Wizards of the Coast.</div>
   </div>
 </body>
 </html>

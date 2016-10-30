@@ -1,0 +1,43 @@
+#comment-form {
+  width: 500px;
+  margin-left: 20px;
+}
+
+input {
+  float: right;
+}
+
+#tournaments-section {
+  margin-left: 20px;
+}
+
+#comments-box {
+  border: 2px solid;
+  border-style: inset;
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-bottom: 40px;
+  width: 500px;
+}
+
+#comments-section > h2 {
+  float: left;
+}
+
+.comment-container {
+  border: 1px solid;
+  margin: 20px;
+}
+
+.comment-body {
+  margin-top: 5px;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+.comment-creator {
+  font-style: italic;
+  font-size: .75em;
+  margin-top: 2px;
+  margin-left: 3px;
+}

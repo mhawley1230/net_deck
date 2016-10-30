@@ -1,4 +1,4 @@
-<div class="top-bar">
+<div class="buttons">
   <button type="button" class='standard-button'>Standard</button>
   <button type="button" class='modern-button'>Modern</button>
   <button type="button" class="legacy-button">Legacy</button>
@@ -6,8 +6,9 @@
 </div>
 
 
+
 <div id='tournaments'>
-  Latest tournaments:
+  <div style="text-decoration:underline">Latest tournaments:</div>
   <% @tournaments.each do |tournament| %>
     <% if tournament.format == 'Standard' %>
       <li><%= link_to ("#{tournament.name} - #{tournament.date}"), tournament_path(tournament) %></li>

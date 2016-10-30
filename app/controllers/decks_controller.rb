@@ -19,7 +19,7 @@ class DecksController < ApplicationController
             archetype: @deck.archetype,
             main: @cards.where(main?: true),
             side: @cards.where(main?: false)
-          } 
+          }
         }
       }
     end
