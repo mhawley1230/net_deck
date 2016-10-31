@@ -1,9 +1,21 @@
+#tournaments-header {
+  margin-left: 5px;
+  margin-top: 5px;
+  text-decoration: underline;
+}
+
+#tournaments {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
 #tournaments > li > a {
   color: black;
 }
 
+
 .buttons {
-  margin: 0 auto;
+  margin-left: 5px;
   border-bottom: solid 1px;
 }
 
