@@ -1,5 +1,6 @@
 @import url('./index');
 @import url('./show');
+@import url('./login');
 
 body {
   background-image: url(kaladesh-art.jpg);
@@ -22,6 +23,15 @@ li {
 table, th, td {
   background-color: black;
   color: white;
+}
+
+.flash {
+  margin: 5px;
+  color: red;
+}
+
+#website-title {
+  float: left;
 }
 
 #search-button {

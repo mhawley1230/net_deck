@@ -28,11 +28,15 @@
     </div>
 
     <div id="comments-box">
-      <% @comments.each do |comment| %>
-        <ul class="comment-container">
-          <li class="comment-creator"><%= comment.user.email %> says:</li>
-          <li class="comment-body"><%= comment.body %></li>
-        </ul>
+      <% if @comments.empty? %>
+        No one is discussing this. Be the first!
+      <% else %>
+        <% @comments.each do |comment| %>
+          <ul class="comment-container">
+            <li class="comment-creator"><%= comment.user.email %> says:</li>
+            <li class="comment-body"><%= comment.body %></li>
+          </ul>
+        <% end %>
       <% end %>
     </div>
   </section>

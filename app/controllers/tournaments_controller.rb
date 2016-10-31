@@ -1,6 +1,6 @@
 class TournamentsController < ApplicationController
   def index
-    @tournaments = Tournament.all.order(created_at: :desc)
+    @tournaments = Tournament.all.order(created_at: :asc)
     respond_to do |format|
       format.html
       format.json {
