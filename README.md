@@ -1,24 +1,15 @@
 # README
+Deployed to [Heroku](http://net-deck.herokuapp.com)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## NetDeck
+NetDeck is a platform that uses web scraped data in a user friendly interface to navigate the latest Magic: the Gathering tournaments. The search function allow to users to search by deck name, colors, or card names, and the corresponding results connect to the tournament that they placed in. A social platform also allows users to participate in constructive discussion.
 
-Things you may want to cover:
+## Dependencies
+* Ruby 2.2.3
+* PostgreSQL
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Setup
+1. After cloning the repo, navigate to the project's root directory in a terminal.
+2. Run `bundle install && npm install`.
+3. Run `bundle exec rake db:setup`.
+4. Open `localhost:3000` in your browser.
