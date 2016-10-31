@@ -6,6 +6,7 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
 </head>
 
 <body>
@@ -20,13 +21,14 @@
       <% end %>
 
 
-    <% if user_signed_in? %>
-      <th>Signed in as <%= current_user.email %></th>
-      <th><%= link_to "Log Off", destroy_user_session_path, method: :delete %></th>
-    <% else %>
-      <th><%= link_to "Sign Up", new_user_registration_path %></th>
-      <th><%= link_to "Log In", new_user_session_path %></th>
-    <% end %>
+      <% if user_signed_in? %>
+        <th>Signed in as <%= current_user.email %></th>
+        <th><%= link_to "Log Off", destroy_user_session_path, method: :delete %></th>
+      <% else %>
+        <th><%= link_to "Sign Up", new_user_registration_path %></th>
+        <th><%= link_to "Log In", new_user_session_path %></th>
+      <% end %>
+    </tr>
   </table>
 
   <div id="alert">

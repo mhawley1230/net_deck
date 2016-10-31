@@ -3,12 +3,29 @@
   margin-left: 20px;
 }
 
+.tournament-name {
+  font-size: 2em;
+}
+
+.tournament-date {
+  margin-bottom: 5px;
+}
+
 input {
   float: right;
 }
 
-#tournaments-section {
+.tournaments-section {
   margin-left: 20px;
+}
+
+#comments-section {
+  bottom: 0;
+}
+
+#comments-title {
+  font-size: 1.75em;
+  margin-left: 3px;
 }
 
 #comments-box {

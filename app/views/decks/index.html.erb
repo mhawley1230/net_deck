@@ -1,3 +1,18 @@
-<% @decks.each do |deck| %>
-  <li><a href="/tournaments/<%= deck.tournament.id %>"><%= deck.name %></a></li>
-<% end %>
+<table id="search-table">
+  <tr>
+    <th>Name</th>
+    <th>Format</th>
+    <th>Event</th>
+    <th>Archetype</th>
+    <th>Player</th>
+  </tr>
+  <% @decks.each do |deck| %>
+    <tr>
+      <td style="margin:auto;"><a href="/tournaments/<%= deck.tournament.id %>"><%= deck.name %></a></td>
+      <td><%= deck.tournament.format %></td>
+      <td><%= deck.tournament.name %></td>
+      <td><%= deck.archetype %></td>
+      <td><%= deck.player %></td>
+    </tr>
+  <% end %>
+</table>
