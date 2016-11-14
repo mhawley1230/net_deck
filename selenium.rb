@@ -34,14 +34,19 @@ driver.navigate.to 'http://mtgtop8.com/format?f=ST'
       split_name = split_text[1..-1]
       card_name = split_name.join(' ')
 
-      card_img = MTG::Card.where(name: card_name).all[0].image_url
-
-      if MTG::Card.where(name: card_name).all[0].colors.nil?
-        card_colors = 'colorless'
-      else
-        card_colors = MTG::Card.where(name: card_name).all[0].colors
+      i = 0
+      card_img = MTG::Card.where(name: card_name).all[i].image_url
+      if card_img.empty?
+        i += 1
       end
       binding.pry
+
+      if MTG::Card.where(name: card_name).all[0].colors.nil?
+        card_colors = 'Colorless'
+      else
+        card_colors = MTG::Card.where(name: card_name).all[0].colors.join(', ')
+      end
+      # binding.pry
     end
   end
   driver.navigate.to 'http://mtgtop8.com/format?f=ST'
