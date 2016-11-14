@@ -46,7 +46,6 @@ driver.navigate.to 'http://mtgtop8.com/format?f=ST'
       else
         card_colors = MTG::Card.where(name: card_name).all[0].colors.join(', ')
       end
-      # binding.pry
     end
   end
   driver.navigate.to 'http://mtgtop8.com/format?f=ST'
