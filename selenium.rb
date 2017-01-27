@@ -18,12 +18,14 @@ driver.navigate.to 'http://mtgtop8.com/format?f=ST'
   end
   deck_length = deck_links.length / 2
 
-  # tournament_name = driver.find_element(:xpath, '/html/body/div[3]/div/div/table/tbody/tr/td[1]').text
-  # tournament_info = driver.find_element(:xpath, '/html/body/div[3]/div/table/tbody/tr/td[1]/div/table/tbody/tr/td').text
-  # t_data = tournament_info.split()
-  # tournament_format = t_data[0]
-  # tournament_no_of_players = t_data[1]
-  # tournament_date = t_data[4]
+  tournament_name = driver.find_element(:xpath, '/html/body/div[3]/div/div/table/tbody/tr/td[1]').text
+  tournament_info = driver.find_element(:xpath, '/html/body/div[3]/div/table/tbody/tr/td[1]/div/table/tbody/tr/td').text
+  binding.pry
+  
+  t_data = tournament_info.split()
+  tournament_format = t_data[0]
+  tournament_no_of_players = t_data[1]
+  tournament_date = t_data[4]
 
   deck_length.times do |i|
     results = driver.find_element(:xpath, "/html/body/div[3]/div/table/tbody/tr/td[1]/div/div[#{i+1}]/div[2]/a")
