@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 20170128172229) do
   create_table "decks", force: :cascade do |t|
     t.string   "name",          null: false
     t.integer  "placing",       null: false
-    t.string   "archetype",     null: false
     t.string   "player",        null: false
     t.integer  "tournament_id", null: false
     t.datetime "created_at",    null: false

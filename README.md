@@ -10,6 +10,6 @@ NetDeck is a platform that uses web scraped data in a user friendly interface to
 
 ## Setup
 1. After cloning the repo, navigate to the project's root directory in a terminal.
-2. Run `bundle install && npm install`.
+2. Run `bundle install`.
 3. Run `bundle exec rake db:setup`.
 4. Open `localhost:3000` in your browser.

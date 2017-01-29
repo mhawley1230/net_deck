@@ -18,6 +18,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'
   gem 'sqlite3'
+  gem 'selenium-webdriver'
 end
 
 group :test do
