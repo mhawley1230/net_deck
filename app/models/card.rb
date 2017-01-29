@@ -8,7 +8,6 @@ class Card < ActiveRecord::Base
   validates :number_played, presence: true
   validates :img_url, presence: true
   validates :deck_id, presence: true
-  validates :main?, presence: true
 
   multisearchable against: [:name, :colors]
 end

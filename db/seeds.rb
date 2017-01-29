@@ -66,10 +66,12 @@ driver.navigate.to 'http://mtgtop8.com/format?f=ST'
           card_colors = MTG::Card.where(name: card_name).all[0].colors.join(", ")
         end
 
-        main = true
         if index == 2
           main = false
+        else
+          main = true
         end
+        binding.pry
 
         Card.create!( name: card_name, colors: card_colors, number_played: number_played,
           img_url: card_img, main?: main, deck_id: current_deck.id )
