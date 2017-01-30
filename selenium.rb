@@ -71,7 +71,6 @@ driver.navigate.to 'http://mtgtop8.com/format?f=ST'
         main = true
         if index == 2
           main = false
-          binding.pry
         end
       end
 
