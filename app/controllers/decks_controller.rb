@@ -16,7 +16,6 @@ class DecksController < ApplicationController
           deck: {
             name: @deck.name,
             player: @deck.player,
-            archetype: @deck.archetype,
             main: @cards.where(main?: true),
             side: @cards.where(main?: false)
           }

@@ -10,7 +10,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'mtg_sdk'
 gem 'rubocop', require: false
-gem 'selenium-webdriver'
+gem 'mechanize'
 gem 'pg_search'
 gem 'devise'
 
@@ -18,6 +18,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'
   gem 'sqlite3'
+  gem 'selenium-webdriver'
 end
 
 group :test do

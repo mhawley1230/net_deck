@@ -11,7 +11,6 @@ $(document).ready(function(){
         var str = '';
         str += '<li>' + data.deck.name + '</li>';
         str += '<li>Player: ' + data.deck.player + '</li>';
-        str += '<li>Archetype: ' + data.deck.archetype + '</li>';
         str += 'Main Deck';
         for(var i in data.deck.main) {
           card = data.deck.main[i];
